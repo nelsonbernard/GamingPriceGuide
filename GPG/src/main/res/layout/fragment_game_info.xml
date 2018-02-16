@@ -1,0 +1,250 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.cheapassapps.app.gamingpriceguide.Fragments.GameInfoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/gamelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:background="@color/colorPrimary"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/bannerImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/mario" />
+
+                <TextView
+                    android:id="@+id/textConsole"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/black"
+                    android:foregroundGravity="center"
+                    android:padding="10dp"
+                    android:text="Super Nintendo"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/colorAccent" />
+
+                <LinearLayout
+                    android:id="@+id/priceheaders"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="140dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="3dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text = "Loose"
+                        android:textColor="@color/colorAccent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text = "CIB"
+                        android:textColor="@color/colorAccent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text = "New"
+                        android:textColor="@color/colorAccent"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pricedata"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="140dp"
+                    android:paddingTop="5dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/looseText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="$18.15"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/cibText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="$31.42"
+                        android:textAlignment="center"
+
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/newText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="$77.90"
+                        android:textAlignment="center"
+
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20dp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/overviewlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/gamelayout"
+                android:background="@color/colorPrimary">
+
+                <TextView
+                    android:id="@+id/gameTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@android:color/black"
+                    android:padding="8dp"
+                    android:text="Castlevania II"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/descriptionborder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gameTitleTextView"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/highlightborder"
+                    android:padding="6dp"
+                    android:text="Description"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/descriptionborder"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@android:color/black"
+                    android:padding="8dp"
+                    android:text="Loading..."
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/screenshotsborder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/description"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/highlightborder"
+                    android:padding="6dp"
+                    android:text="Screenshots"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12dp" />
+
+                <HorizontalScrollView
+                    android:id="@+id/screenshotsScrollView"
+                    android:layout_below="@id/screenshotsborder"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@android:color/black">
+                    <LinearLayout
+                        android:id="@+id/screenshotsLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="2dp"/>
+                </HorizontalScrollView>
+<!--                <ImageView
+                    android:id="@+id/screenshots"
+                    android:layout_below="@+id/screenshotsborder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@android:color/black"
+                    android:padding="8dp" />-->
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/gameImageFrameLayout"
+                android:layout_width="125dp"
+                android:layout_height="175dp"
+                android:layout_alignBottom="@+id/gamelayout"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="70dp"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/gameImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitEnd"
+                    app:srcCompat="@android:color/holo_green_dark" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
