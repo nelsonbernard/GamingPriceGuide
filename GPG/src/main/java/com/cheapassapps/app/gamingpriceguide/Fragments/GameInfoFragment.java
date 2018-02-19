@@ -5,6 +5,8 @@ import android.graphics.BlurMaskFilter;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +30,10 @@ import java.util.concurrent.ExecutionException;
  * A simple {@link Fragment} subclass.
  */
 public class GameInfoFragment extends Fragment {
+
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerView.Adapter mAdapter;
 
     public static GameInfoFragment newInstance(int gameID){
         Bundle args = new Bundle();
@@ -68,9 +74,8 @@ public class GameInfoFragment extends Fragment {
         TextView textConsole = (TextView) view.findViewById(R.id.textConsole);
         TextView description = (TextView) view.findViewById(R.id.description);
         ImageView bannerImageView = (ImageView) view.findViewById(R.id.bannerImageView);
-        HorizontalScrollView screenshotsScrollView = (HorizontalScrollView) view.findViewById(R.id.screenshotsScrollView);
+        //HorizontalScrollView screenshotsScrollView = (HorizontalScrollView) view.findViewById(R.id.screenshotsScrollView);
         LinearLayout screenshotsLayout = (LinearLayout) view.findViewById(R.id.screenshotsLayout);
-        //ImageView screenshotsView = (ImageView) view.findViewById(R.id.screenshots);
         String imageurl = "http://www.cheapassgames.xyz/gpgapp/images/" + DatabaseHelper.getCurrentGame().getConsoleID() + "/" + DatabaseHelper.getCurrentGame().getImageName();
         Picasso.with(getContext()).load(imageurl).into(imageView);
         textView.setText(DatabaseHelper.getCurrentGame().getName());
@@ -81,9 +86,16 @@ public class GameInfoFragment extends Fragment {
         description.setText(DatabaseHelper.getCurrentGame().getDescription());
         Picasso.with(getContext()).load(DatabaseHelper.getCurrentGame().getScreen_url()).into(bannerImageView);
 
+
         for(int i = 0; i < DatabaseHelper.getCurrentGame().getImages().size(); i++)
         {
-            Picasso.with(getContext()).load(DatabaseHelper.getCurrentGame().getImages().get(i)).into(screenshotsScrollView);
+            ImageView screenshot = new ImageView(getContext());
+            screenshot.setMaxHeight(75);
+            screenshot.setPadding(5,5,5,5);
+            screenshot.setScaleType(ImageView.ScaleType.FIT_CENTER);
+
+            Picasso.with(getContext()).load(DatabaseHelper.getCurrentGame().getImages().get(i)).into(screenshot);
+            screenshotsLayout.addView(screenshot);
         }
 
 
