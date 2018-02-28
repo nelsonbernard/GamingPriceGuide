@@ -20,7 +20,7 @@
                 android:id="@+id/gamelayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
+                android:paddingBottom="5dp"
                 android:background="@color/colorPrimary"
                 android:orientation="vertical">
 
@@ -31,23 +31,43 @@
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/mario" />
 
-                <TextView
-                    android:id="@+id/textConsole"
+                <LinearLayout
+                    android:id="@+id/CollectionHeaders"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@android:color/black"
-                    android:foregroundGravity="center"
-                    android:padding="10dp"
-                    android:text="Super Nintendo"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/colorAccent" />
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/collectionButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:textSize="8dp"
+                        android:text="+ Add to Collection"
+                        android:background="@android:color/holo_green_dark"
+                        android:padding="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="140dp"/>
+
+                    <TextView
+                        android:id="@+id/textConsole"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/black"
+                        android:foregroundGravity="center"
+                        android:padding="10dp"
+                        android:text="Super Nintendo"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorAccent" />
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/priceheaders"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="140dp"
-                    android:paddingTop="10dp"
+                    android:paddingTop="2dp"
                     android:paddingRight="3dp"
                     android:background="@color/colorPrimary"
                     android:orientation="horizontal">
@@ -57,6 +77,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textAlignment="center"
+                        android:textSize="12dp"
                         android:text = "Loose"
                         android:textColor="@color/colorAccent"/>
 
@@ -66,6 +87,7 @@
                         android:layout_weight="1"
                         android:textAlignment="center"
                         android:text = "CIB"
+                        android:textSize="12dp"
                         android:textColor="@color/colorAccent"/>
 
                     <TextView
@@ -74,6 +96,7 @@
                         android:layout_weight="1"
                         android:textAlignment="center"
                         android:text = "New"
+                        android:textSize="12dp"
                         android:textColor="@color/colorAccent"/>
 
 
@@ -84,7 +107,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="140dp"
-                    android:paddingTop="5dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="3dp"
                     android:background="@color/colorPrimary"
                     android:orientation="horizontal">
 
@@ -96,7 +120,7 @@
                         android:text="$18.15"
                         android:textAlignment="center"
                         android:textColor="@color/colorAccent"
-                        android:textSize="20dp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/cibText"
@@ -107,7 +131,7 @@
                         android:textAlignment="center"
 
                         android:textColor="@color/colorAccent"
-                        android:textSize="20dp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/newText"
@@ -118,7 +142,7 @@
                         android:textAlignment="center"
 
                         android:textColor="@color/colorAccent"
-                        android:textSize="20dp" />
+                        android:textSize="18sp" />
 
 
                 </LinearLayout>
@@ -132,6 +156,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_below="@+id/gamelayout"
                 android:background="@color/colorPrimary">
+
 
                 <TextView
                     android:id="@+id/gameTitleTextView"
@@ -188,23 +213,27 @@
                     android:textColor="@color/colorAccent"
                     android:textSize="12dp" />
 
-                <HorizontalScrollView
-                    android:id="@+id/screenshotsScrollView"
-                    android:layout_below="@id/screenshotsborder"
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
-                    android:background="@android:color/black">
-                    <LinearLayout
-                        android:id="@+id/screenshotsLayout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingTop="2dp"/>
-                </HorizontalScrollView>
+                    <HorizontalScrollView
+                        android:id="@+id/screenshotsScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_below="@id/screenshotsborder">
+
+                        <LinearLayout
+                            android:id="@+id/screenshotsLayout"
+                            android:background="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="100dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"/>
+
+                    </HorizontalScrollView>
+
+
 <!--                <ImageView
                     android:id="@+id/screenshots"
                     android:layout_below="@+id/screenshotsborder"
@@ -224,11 +253,8 @@
                 android:layout_width="125dp"
                 android:layout_height="175dp"
                 android:layout_alignBottom="@+id/gamelayout"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="false"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="70dp"
                 android:padding="5dp">
 
                 <ImageView
@@ -237,6 +263,7 @@
                     android:layout_height="match_parent"
                     android:scaleType="fitEnd"
                     app:srcCompat="@android:color/holo_green_dark" />
+
 
             </RelativeLayout>
         </RelativeLayout>

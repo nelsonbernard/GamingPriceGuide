@@ -49,6 +49,7 @@ public class ConsolesFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.content, GamesFragment.newInstance(DatabaseHelper.GetConsoleList().get(position).getConsoleID()));
+                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
