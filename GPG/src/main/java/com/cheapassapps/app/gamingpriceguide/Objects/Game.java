@@ -65,15 +65,14 @@ public class Game{
     }
 
     public String getScreen_url() {
-        if(this.screen_url == "")
-            setScreen_url();
         return screen_url;
     }
 
-    public void setScreen_url() {
+    public void setScreen_url(String url) {
 
-        Collections.shuffle(images);
-        this.screen_url = images.get(0);
+        this.screen_url = url;
+/*        Collections.shuffle(images);
+        this.screen_url = images.get(0);*/
     }
 
     public String getReleaseDate() {
@@ -93,7 +92,7 @@ public class Game{
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name.replaceAll("\\[.*?]","");
     }
 
     public int getId() {

@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             // Replace main content frame with selected fragment
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.content, selectedFragment);
+            transaction.addToBackStack(null);
             transaction.commit();
 
             return true;

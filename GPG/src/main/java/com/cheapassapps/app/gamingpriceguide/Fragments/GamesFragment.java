@@ -62,6 +62,7 @@ public class GamesFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.content, GameInfoFragment.newInstance(DatabaseHelper.GetGamesList().get(position).getId()));
+                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
