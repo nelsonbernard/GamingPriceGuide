@@ -216,7 +216,7 @@
                     <HorizontalScrollView
                         android:id="@+id/screenshotsScrollView"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_height="120dp"
                         android:layout_marginLeft="4dp"
                         android:layout_marginRight="4dp"
                         android:layout_below="@id/screenshotsborder">
@@ -225,7 +225,7 @@
                             android:id="@+id/screenshotsLayout"
                             android:background="@android:color/black"
                             android:layout_width="wrap_content"
-                            android:layout_height="100dp"
+                            android:layout_height="match_parent"
                             android:gravity="center_vertical"
                             android:orientation="horizontal"
                             android:paddingTop="5dp"
