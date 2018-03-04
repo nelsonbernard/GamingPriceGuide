@@ -1,6 +1,4 @@
 package com.cheapassapps.app.gamingpriceguide.Helpers;
-
-import android.graphics.Point;
 import android.os.AsyncTask;
 import android.util.Log;
 import com.cheapassapps.app.gamingpriceguide.Objects.Console;
@@ -42,9 +40,7 @@ public final class DatabaseHelper {
         GetAllConsolesTask myTask = new GetAllConsolesTask();
         try {
             myTask.execute().get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
     }
@@ -54,9 +50,7 @@ public final class DatabaseHelper {
         GetGamesFromConsoleTask myTask = new GetGamesFromConsoleTask();
         try {
             myTask.execute(consoleid).get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
 
@@ -68,9 +62,7 @@ public final class DatabaseHelper {
         GetGameTask myTask = new GetGameTask();
         try {
             myTask.execute(id).get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
     }
@@ -111,9 +103,7 @@ public final class DatabaseHelper {
                     currentGame.setGiantBombID(currentObject.getString("giantbomb_id"));
 
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (JSONException | IOException e) {
                 e.printStackTrace();
             }
 
@@ -143,9 +133,7 @@ public final class DatabaseHelper {
                 currentGame.setGiantBombID(currentObject.getString("guid"));
 
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
+            } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
 
@@ -254,9 +242,7 @@ public final class DatabaseHelper {
                     Log.i("Game:  ", console.getName());
                 }
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
+            } catch (IOException | JSONException e) {
                 e.printStackTrace();
             }
             return null;
@@ -281,7 +267,7 @@ public final class DatabaseHelper {
 
     }
 
-    public static String removeTags(String in)
+    static String removeTags(String in)
     {
         int index=0;
         int index2=0;

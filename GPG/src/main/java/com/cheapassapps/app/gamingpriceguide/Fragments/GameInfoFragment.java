@@ -82,12 +82,13 @@ public class GameInfoFragment extends Fragment {
         for(int i = 0; i < DatabaseHelper.getCurrentGame().getImages().size(); i++)
         {
             ImageView screenshot = new ImageView(getContext());
-            screenshot.setMaxHeight(65);
-            screenshot.setMaxWidth(45);
-            screenshot.setPadding(5,5,5,5);
-            screenshot.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            //screenshot.setMaxHeight(65);
+            //screenshot.setMaxWidth(45);
+            screenshot.setPadding(0,2,4,2);
+            //screenshot.setScaleType(ImageView.ScaleType.FIT_XY);
 
             Picasso.with(getContext()).load(DatabaseHelper.getCurrentGame().getImages().get(i)).into(screenshot);
+            screenshot.setAdjustViewBounds(true);
             screenshotsLayout.addView(screenshot);
         }
 
