@@ -86,7 +86,7 @@ public final class DatabaseHelper {
             String postResponse = null;
             Game currentGame = new Game();
             try {
-                postResponse = doPostRequest("http://www.cheapassgames.xyz/gpgapp/phpscripts/gameinfo.php", gamejson);
+                postResponse = doPostRequest("http://www.nelsonbernard.com/gpgapp/phpscripts/gameinfo.php", gamejson);
                 JSONObject jsonObject = new JSONObject(postResponse);
                 JSONArray jsonArray = jsonObject.getJSONArray("result");
 
@@ -110,7 +110,7 @@ public final class DatabaseHelper {
             gamejson = "{\"query\":\"" + currentGame.getName() + "\"}";
 
             try {
-                postResponse = doPostRequest("http://www.cheapassgames.xyz/gpgapp/phpscripts/giantbombsearch.php", gamejson);
+                postResponse = doPostRequest("http://www.nelsonbernard.com/gpgapp/phpscripts/giantbombsearch.php", gamejson);
                 JSONObject currentObject = new JSONObject(postResponse);
                 JSONArray jsonArray = currentObject.getJSONArray("images");
 
@@ -162,7 +162,7 @@ public final class DatabaseHelper {
             String consolejson = "{\"consoleid\":\"" + params[0] + "\"}";
             String postResponse = null;
             try {
-                postResponse = doPostRequest("http://www.cheapassgames.xyz/gpgapp/phpscripts/gamesbyconsole.php", consolejson);
+                postResponse = doPostRequest("http://www.nelsonbernard.com/gpgapp/phpscripts/gamesbyconsole.php", consolejson);
                 JSONObject jsonObject = new JSONObject(postResponse);
                 JSONArray jsonArray = jsonObject.getJSONArray("result");
                 for (int i = 0; i < jsonArray.length(); i++) {
@@ -206,7 +206,7 @@ public final class DatabaseHelper {
             consoleList.clear();
 
             try {
-                URL url = new URL("http://www.cheapassgames.xyz/gpgapp/phpscripts/consolelist.php");
+                URL url = new URL("http://www.nelsonbernard.com/gpgapp/phpscripts/consolelist.php");
                 connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestProperty("Content-Type", "application/json");
                 connection.connect();
@@ -234,9 +234,9 @@ public final class DatabaseHelper {
 
                     String imageLocation = "";
                     if(console.getConsoleID() == "playstation-1-ps1" || console.getConsoleID() == "playstation-portable-psp")
-                        imageLocation = "http://www.cheapassgames.xyz/gpgapp/images/consoles/" + console.getConsoleID() + ".svg";
+                        imageLocation = "http://www.nelsonbernard.com/gpgapp/images/consoles/" + console.getConsoleID() + ".svg";
                     else
-                        imageLocation = "http://www.cheapassgames.xyz/gpgapp/images/consoles/" + console.getConsoleID() + ".png";
+                        imageLocation = "http://www.nelsonbernard.com/gpgapp/images/consoles/" + console.getConsoleID() + ".png";
                     console.setImageURL(imageLocation);
                     consoleList.add(console);
                     Log.i("Game:  ", console.getName());

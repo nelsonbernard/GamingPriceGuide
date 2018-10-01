@@ -66,7 +66,7 @@ public class GameAdapter extends BaseAdapter{
       //  Picasso.with(mContext).load(game.getImageURL()).into(imageView);
 
         nameTextView.setText(game.getName());
-        String imageurl = "http://www.cheapassgames.xyz/gpgapp/images/" + game.getConsoleID() + "/" + game.getImageName();
+        String imageurl = "http://www.nelsonbernard.com/gpgapp/images/" + game.getConsoleID() + "/" + game.getImageName();
         Picasso.with(mContext).load(imageurl).into(imageView);
 
         return convertView;

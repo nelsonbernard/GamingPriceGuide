@@ -45,9 +45,9 @@ public class PricingDataHelper {
     static final String url_attrib_format = "&format=json";
     static final String url_attrib_query = "&query=";
     static final String url_attrib_resources = "&resources=game";
-    private static String base_URL = "http://www.cheapassgames.xyz/public_html/gpgapp/";
-    private static String image_URL = "http://www.cheapassgames.xyz/public_html/gpgapp/images/";
-    private static String scripts_URL = "http://www.cheapassgames.xyz/public_html/gpgapp/phpscripts/";
+    private static String base_URL = "http://www.nelsonbernard.com/public_html/gpgapp/";
+    private static String image_URL = "http://www.nelsonbernard.com/public_html/gpgapp/images/";
+    private static String scripts_URL = "http://www.nelsonbernard.com/public_html/gpgapp/phpscripts/";
     private static String GETCONSOLELISTSCRIPT = scripts_URL + "consolelist.php";
     private static String GETGAMESBYCONSOLESCRIPT = scripts_URL + "gamesbyconsole.php";
 

@@ -64,7 +64,7 @@ public class GameInfoFragment extends Fragment {
         ImageView bannerImageView = (ImageView) view.findViewById(R.id.bannerImageView);
         HorizontalScrollView screenshotsScrollView = (HorizontalScrollView) view.findViewById(R.id.screenshotsScrollView);
         LinearLayout screenshotsLayout = (LinearLayout) view.findViewById(R.id.screenshotsLayout);
-        String imageurl = "http://www.cheapassgames.xyz/gpgapp/images/" + DatabaseHelper.getCurrentGame().getConsoleID() + "/" + DatabaseHelper.getCurrentGame().getImageName();
+        String imageurl = "http://www.nelsonbernard.com/gpgapp/images/" + DatabaseHelper.getCurrentGame().getConsoleID() + "/" + DatabaseHelper.getCurrentGame().getImageName();
         Picasso.with(getContext()).load(imageurl).into(imageView);
         textView.setText(DatabaseHelper.getCurrentGame().getName());
         looseText.setText(DatabaseHelper.getCurrentGame().getLoosePrice());
